@@ -5,6 +5,7 @@ gen'd using Markov chains
 
 import random 
 import pickle
+import sys
 
 def syllable_count(word):
     word = word.lower()
@@ -72,5 +73,5 @@ def load_model(model):
         return pickle.load(f)
 
 if __name__ == "__main__":
-    model = load_model("model.p")
+    model = load_model(sys.argv[1])
     print(gen_haiku(model))
